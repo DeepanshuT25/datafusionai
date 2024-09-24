@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -58,4 +56,3 @@
 body {
   margin: 0px !important;
 }
-

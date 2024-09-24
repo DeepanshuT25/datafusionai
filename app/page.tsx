@@ -4,7 +4,6 @@ import Answer from "@/components/Answer";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import InputArea from "@/components/InputArea";
 import SimilarTopics from "@/components/SimilarTopics";
 import Sources from "@/components/Sources";
 import Image from "next/image";
@@ -14,9 +13,11 @@ import {
   ParsedEvent,
   ReconnectInterval,
 } from "eventsource-parser";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft, Sidebar } from "lucide-react";
+import Asidebar from "@/components/Asidebar";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(true);
   const [promptValue, setPromptValue] = useState("");
   const [question, setQuestion] = useState("");
   const [showResult, setShowResult] = useState(false);
@@ -27,6 +28,7 @@ export default function Home() {
   const [similarQuestions, setSimilarQuestions] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
 
   const handleDisplayResult = async (newQuestion?: string) => {
     newQuestion = newQuestion || promptValue;
@@ -136,16 +138,23 @@ export default function Home() {
   }
 
   return (
-    <div className="flex-grow relative overflow-hidden bg-gray-900 ">
-    <header className="relative z-10 flex items-center justify-between p-4">
-          <button
+    <div className="flex">
+      <div className="nav-bar flex bg-gray-800 rounded-md h-auto px-2">
+        <div className="nav-items">
+        <button
             onClick={handleBack}
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors duration-200"
+            className="flex items-center justify-center ml-1 mt-4 w-10 h-10 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors duration-100"
           >
             <ArrowLeft className="w-6 h-6 text-gray-600" />
           </button>
+        </div>
+          
+        </div>
+      <div className="flex-grow relative overflow-hidden bg-gray-900 ">
+    <header className="flex items-center p-4">
         <Header />
         </header>
+        
      
       <main className="h-full px-4 pb-4">
         {!showResult && (
@@ -170,7 +179,7 @@ export default function Home() {
                       height={30}
                       className="size-[24px]"
                     />
-                    <p className="pr-5 font-bold uppercase leading-[152%] text-black">
+                    <p className="pr-5 font-bold uppercase leading-[152%] text-gray-400">
                       Question:
                     </p>
                   </div>
@@ -193,7 +202,7 @@ export default function Home() {
           </div>
         )}
       </main>
-      <Footer />
-      /</div>
+      </div>
+      </div>
   );
 }

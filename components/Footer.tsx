@@ -4,9 +4,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <div className="container flex items-center justify-between border-t border-[#D2D2D2] px-4 pb-0 pt-6">
+      <div className="container w-full border-t border-[#D2D2D2] pt-8">
       </div>
-      <div className="flex">
+      <div className="flex w-full">
         <a 
         href=""></a>
       </div>

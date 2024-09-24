@@ -7,7 +7,7 @@ const inter = Lexend({ subsets: ["latin"] });
 
 let title = "Data-Fusion – AI Search Engine";
 let description =
-  "Analyse smarter and deeper with AI";
+  "Analyse smarter and deeper";
 let url = "https://github.com/Ki55n/Data-Fusion";
 let sitename = "Data-Fusion";
 

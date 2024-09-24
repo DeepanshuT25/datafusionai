@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
 import InputArea from "./InputArea";
+import Asidebar from "./Asidebar";
 
 type THeroProps = {
   promptValue: string;
@@ -18,16 +19,21 @@ const Hero: FC<THeroProps> = ({
   };
 
   return (
-    <div className="flex flex-col bg-gray-900 items-center justify-center">
-      <h2 className="bg-custom-gradient bg-clip-text pb-7 pt-2 text-gray-100 text-center text-3xl font-semibold leading-[normal] lg:text-[64px]">
+<div className="flex h-screen">
+      <Asidebar 
+    
+        />
+   
+      <div className="ml-2 flex flex-col bg-gray-900 items-center justify-center">
+        <h2 className="bg-custom-gradient bg-clip-text pb-7 pt-1 text-gray-100 text-center text-4xl font-semibold leading-[normal] lg:text-[64px]">
         Analyse smarter & Deeper
       </h2>
 
       {/* Suggestions section */}
-      <div className="flex flex-wrap mx-auto items-center text-gray-100 font-bold px-4 py-10 justify-center gap-4 ">
+      <div className="flex flex-wrap mx-auto items-center text-gray-100 font-bold px-4 justify-center gap-6 ">
         {suggestions.map((item) => (
           <div
-            className="flex h-[35px] cursor-pointer items-center justify-center gap-[5px] rounded-lg text-white border border-gray-600 bg-gray-800 px-8 py-10 shadow-sm transition-colors hover:bg-gray-100 hover:text-black"
+            className="flex h-[35px] cursor-pointer items-center justify-center gap-[5px] rounded-lg text-white border border-gray-600 bg-gray-800 px-6 py-10 shadow-sm transition-colors hover:bg-gray-100 hover:text-black"
             onClick={() => handleClickSuggestion(item?.name)}
             key={item.id}
           >
@@ -52,15 +58,16 @@ const Hero: FC<THeroProps> = ({
       </div>
       {/* input section */}
       
-      <div className="w-full pb-6 py-14">
+      <div className="w-full pb-4 py-14">
         <InputArea
           promptValue={promptValue}
           setPromptValue={setPromptValue}
           handleDisplayResult={handleDisplayResult}
         />
-        
       </div>
-    </div>
+
+      </div>
+      </div>
   );
 };
 
