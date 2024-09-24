@@ -25,7 +25,7 @@ const Hero: FC<THeroProps> = ({
         />
    
       <div className="ml-2 flex flex-col bg-gray-900 items-center justify-center">
-        <h2 className="bg-custom-gradient bg-clip-text pb-7 pt-1 text-gray-100 text-center text-4xl font-semibold leading-[normal] lg:text-[64px]">
+        <h2 className="bg-custom-gradient bg-clip-text pb-7 pt-20 text-gray-100 text-center text-4xl font-semibold leading-[normal] lg:text-[64px]">
         Analyse smarter & Deeper
       </h2>
 
@@ -58,16 +58,15 @@ const Hero: FC<THeroProps> = ({
       </div>
       {/* input section */}
       
-      <div className="w-full pb-4 py-14">
+      <div className="w-full pb-2 ml-2 py-14">
         <InputArea
           promptValue={promptValue}
           setPromptValue={setPromptValue}
           handleDisplayResult={handleDisplayResult}
         />
+        </div>
       </div>
-
-      </div>
-      </div>
+    </div>
   );
 };
 

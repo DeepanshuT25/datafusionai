@@ -151,7 +151,7 @@ export default function Home() {
           
         </div>
       <div className="flex-grow relative overflow-hidden bg-gray-900 ">
-    <header className="flex items-center p-4">
+    <header className="flex items-center">
         <Header />
         </header>
         
@@ -183,7 +183,7 @@ export default function Home() {
                       Question:
                     </p>
                   </div>
-                  <div className="grow">&quot;{question}&quot;</div>
+                  <div className="grow text-gray-400">&quot;{question}&quot;</div>
                 </div>
                 <>
                   <Sources sources={sources} isLoading={isLoadingSources} 

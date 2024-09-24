@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { FC, useState, useEffect, useRef } from "react";
+import Footer from "./Footer";
 
 type TInputAreaProps = {
   promptValue: string;
@@ -85,7 +86,7 @@ const InputArea: FC<TInputAreaProps> = ({
   };
 
     return (
-  <div className="relative w-full mx-auto">
+  <div className="relative py-6 w-full mx-auto">
      <form
       className=" flex h-[55px] w-full items-center justify-between rounded-md border bg-slate-800 px-0 mr-1 py-10 shadow-lg"
       onSubmit={(e) => {

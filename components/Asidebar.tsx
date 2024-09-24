@@ -20,7 +20,7 @@ const Asidebar = () => {
 
 
   return (
-    <div className="flex h-screen ml-0 rounded-md">
+    <div className="flex top-0 h-full rounded-md">
       <aside
         className={`bg-black transition-all duration-300 ease-in-out ${
           isOpen ? 'w-64' : 'w-0'
@@ -47,13 +47,13 @@ const Asidebar = () => {
         </div>
       </aside>
       <button
-        className="absolute z-10 ml-1 transition-all duration-300 ease-in-out"
+        className="absolute ml-1 transition-all duration-300 ease-in-out"
         style={{ left: isOpen ? '270px' : '0' }}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <ChevronLeft className="bg-gray-600 text-white h-screen w-2" /> : <ChevronRight className="bg-gray-600 text-white h-screen w-2" />}
       </button>
-      <div className={`flex transition-all duration-300 ease-in-out ${isOpen ? 'ml-72' : 'ml-0'}`}>
+      <div className={`flex transition-all duration-300 ease-in-out ${isOpen ? 'ml-2' : 'ml-0'}`}>
       {showChatbot && (
           <div className="chatbot-container">
             <Hero promptValue="" setPromptValue={() => {}} handleDisplayResult={() => {}} />
